@@ -1,0 +1,25 @@
+{
+  "name": "sharit-back",
+  "version": "1.0.0",
+  "description": "Backend part of the simple sharit app ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ylerjen/sharit-back.git"
+  },
+  "keywords": [
+    "sharit"
+  ],
+  "author": "Yann Lerjen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ylerjen/sharit-back/issues"
+  },
+  "homepage": "https://github.com/ylerjen/sharit-back#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
