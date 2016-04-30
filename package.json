@@ -4,7 +4,8 @@
   "description": "Backend part of the simple sharit app ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node . --autotest",
+    "start" : "node server"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "dependencies": {
     "express": "^4.13.4",
     "mongoose": "^4.4.13"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
   }
 }

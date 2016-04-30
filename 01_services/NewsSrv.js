@@ -1,15 +1,16 @@
-module.exports = (() => {
-    var express = require('express');
+var express = require('express'),
+    MwNews = require('../02_business/NewsBusiness');
+
+var NewsSrv = (() => {
     var newsRouter = express.Router();
     
     var routeRoot = '/news';
 
     newsRouter.get(routeRoot + '/:id', (request, response, next) => {
-      var t = request.params.id;
-        // Do something ...
-        
-        response.send('coucou id : ' + t);
-        
+        var id = request.params.id;
+        console.log('NewsSrv');
+        var news = MwNews.getNewsById(id);
+        response.send(news);        
     });
 
     newsRouter.get(routeRoot, (request, response, next) => {
@@ -19,3 +20,5 @@ module.exports = (() => {
 
     return newsRouter;
 })();
+
+module.exports = NewsSrv;
