@@ -2,8 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var categorySchema = new Schema({
-    key: String,
-    description: String
+    key: String
 });
 
 var Category = mongoose.model('Category', categorySchema);
