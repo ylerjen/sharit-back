@@ -1,17 +1,26 @@
+'use strict';
 var NewsCrud = require('../03_database/crud/NewsCrud');
 
-module.exports = {
-    getNewsById: function (id) {
+class NewsBusiness {
+    static getNewsById (id, successCb) {
+        console.log('newsbusiness::getNewsById');
         var news = null;
-        console.log('NewsBusiness', id);
-        if (id > 0) {
-            news = NewsCrud.retrieve(id);
+        if (id) {
+            news = NewsCrud.retrieve(id, successCb);
         }
-        return news;
-    },
-    findNews: function (criteria) {
-        var newsArray = [];
-        return newsArray;
     }
+    static findNews (criteria, successCb) {
+        NewsCrud.find(criteria, successCb);
+    }
+    static upsertNews (news, successCb) {
+        console.log('newsbusiness::upsertNews');
+        NewsCrud.upsert(news, successCb);
+    }
+    static destroyNews (id, successCb) {
+        if (id) {
+            NewsCrud.destroy(id, successCb);
+        }
+    } 
+}
 
-};
+module.exports = NewsBusiness;

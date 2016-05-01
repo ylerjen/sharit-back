@@ -1,26 +1,20 @@
 'use strict';
-var DbConnector  = require('../DbConnector'), 
-    News = require('../model/NewsDbModel');
+var News = require('../model/NewsDbModel');
     
 
 class NewsCrud {
-    static find () {
-        
+    static find (criteria, successCb, errorCb) {
+        News.find(criteria, successCb);
     }    
-    static create () {
-        
+    static upsert (news, successCb) {
+        console.log('will save news');
+        new News(news).save(news, successCb);
     }
-    static retrieve () {
-        var dummyNews = new News({
-            title: 'Hello world', 
-            description: 'Lorem ipsum dolor sit amet'
-        });
-        return dummyNews;
+    static retrieve (id, successCb) {
+        console.log(News);
+        News.findById(id, successCb);
     }
-    static update () {
-        
-    }   
-    static delete () {
+    static destroy () {
         
     }
 }
