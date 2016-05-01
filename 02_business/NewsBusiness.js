@@ -2,21 +2,21 @@
 var News = require('../03_database/model/NewsDbModel');
 
 class NewsBusiness {
-    static getNewsById (id, successCb) {
+    static getById (id, successCb) {
         var news = null;
         if (id) {
             News.findById(id, successCb);
         }
     }
-    static findNews (criteria, successCb) {
+    static find (criteria, successCb) {
         News.find(criteria, successCb);
     }
-    static upsertNews (news, successCb) {
+    static upsert (news, successCb) {
         new News(news).save(news, successCb);
     }
-    static destroyNews (id, successCb) {
+    static destroy (id, successCb) {
         var criteria = {_id: id};
-        News.findOneAndRemove(criteria);
+        News.findOneAndRemove(criteria, successCb);
     } 
 }
 
