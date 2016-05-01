@@ -1,4 +1,4 @@
-exports.env = {
+module.exports = {
     USER : '',
     PASS : '',
     HOST : 'localhost',
