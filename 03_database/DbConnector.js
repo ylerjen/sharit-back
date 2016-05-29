@@ -20,7 +20,7 @@ class DbConnector {
         var db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
         db.once('open', () => {
-            console.info("we're connected to mongodb !");
+            console.info("we're connected to mongodb " + this.connectionString + " !");
         });
     }
 }
