@@ -3,5 +3,5 @@ module.exports = {
     PASS : '',
     HOST : 'localhost',
     PORT : '27017',
-    DB   : 'test'
+    DB   : 'sharit'
 };
